@@ -42,6 +42,10 @@ def main():
 				request = rs.replace("find", "").replace("search for", "").replace(" ", "+")
 				thread(target = lambda a : webbrowser.get(chrome_path).open(f"http://www.google.com/search?q={request}"), args = (10, )).start()
 				check = False
+			if "translate" in rs:
+				request = rs.replace("translate", "").replace(" ", "+")
+				thread(target = lambda a : webbrowser.get(chrome_path).open(f"http://www.google.com/search?q={request}"), args = (10, )).start()
+				check = False
 			if "open" in rs:
 				if "youtube" in rs:
 					thread(target = lambda a : webbrowser.get(chrome_path).open("www.youtube.com/"), args = (10, )).start()
